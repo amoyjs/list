@@ -1,6 +1,6 @@
 declare module 'pixi-scrollbox'
 
-namespace LIST {
+declare namespace LIST {
     export class ListOptions {
         width: number
         height: number
