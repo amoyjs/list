@@ -7,6 +7,8 @@ export default class List extends Container {
     constructor({
         width,
         height,
+        overflowX = 'hidden',
+        overflowY = 'auto',
         cornerRadius = 0,
         scrollbarSize = 5,
         ...rest
@@ -19,8 +21,8 @@ export default class List extends Container {
         this.box = new Scrollbox({
             boxWidth: width,
             boxHeight: height,
-            overflowX: 'hidden',
-            overflowY: 'auto',
+            overflowX,
+            overflowY,
             scrollbarSize,
             ...rest,
         })

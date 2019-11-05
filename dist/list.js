@@ -4676,11 +4676,13 @@
     var List = /** @class */ (function (_super) {
         __extends(List, _super);
         function List(_a) {
-            var width = _a.width, height = _a.height, _b = _a.cornerRadius, cornerRadius = _b === void 0 ? 0 : _b, _c = _a.scrollbarSize, scrollbarSize = _c === void 0 ? 5 : _c, rest = __rest(_a, ["width", "height", "cornerRadius", "scrollbarSize"]);
+            var width = _a.width, height = _a.height, _b = _a.overflowX, overflowX = _b === void 0 ? 'hidden' : _b, _c = _a.overflowY, overflowY = _c === void 0 ? 'auto' : _c, _d = _a.cornerRadius, cornerRadius = _d === void 0 ? 0 : _d, _e = _a.scrollbarSize, scrollbarSize = _e === void 0 ? 5 : _e, rest = __rest(_a, ["width", "height", "overflowX", "overflowY", "cornerRadius", "scrollbarSize"]);
             var _this = _super.call(this) || this;
             var mask = _this.createGraphics(0, 0, width, height, cornerRadius);
             _this.mask = mask;
-            _this.box = new Scrollbox(__assign({ boxWidth: width, boxHeight: height, overflowX: 'hidden', overflowY: 'auto', scrollbarSize: scrollbarSize }, rest));
+            _this.box = new Scrollbox(__assign({ boxWidth: width, boxHeight: height, overflowX: overflowX,
+                overflowY: overflowY,
+                scrollbarSize: scrollbarSize }, rest));
             _this.addChild(_this.box);
             return _this;
         }
