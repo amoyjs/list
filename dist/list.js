@@ -4683,6 +4683,9 @@
             _this.box = new Scrollbox(__assign({ boxWidth: width, boxHeight: height, overflowX: overflowX,
                 overflowY: overflowY,
                 scrollbarSize: scrollbarSize }, rest));
+            _this.beginFill(0xffffff, 0);
+            _this.drawRect(0, 0, width, height);
+            _this.endFill();
             _this.addChild(_this.box);
             return _this;
         }
@@ -4699,7 +4702,7 @@
             this.box.content.addChild(item);
         };
         return List;
-    }(PIXI.Container));
+    }(PIXI.Graphics));
 
     return List;
 

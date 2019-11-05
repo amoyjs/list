@@ -1,7 +1,7 @@
-import { Graphics, Container } from 'pixi.js'
+import { Graphics } from 'pixi.js'
 import { Scrollbox } from 'pixi-scrollbox'
 
-export default class List extends Container {
+export default class List extends Graphics {
     public box: typeof Scrollbox
 
     constructor({
@@ -26,6 +26,10 @@ export default class List extends Container {
             scrollbarSize,
             ...rest,
         })
+
+        this.beginFill(0xffffff, 0)
+        this.drawRect(0, 0, width, height)
+        this.endFill()
 
         this.addChild(this.box)
     }
